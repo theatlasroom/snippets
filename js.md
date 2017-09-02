@@ -63,8 +63,25 @@ function zeropad(str, minlength){
 zeropad("10", 10);
 ```
 
-## ES6 - Array of n items with values 0...n-1
-Use the spread array of
+## Arrays
+### Fill an n-sized array with a particular value
+```
+const n = 5
+const value = 10
+console.log(Array(n).fill(value))
+// prints [10,10,10,10,10]
+```
+
+### Array of n items with values 0...n-1
+Use the spread array operator
 ```
 [...Array(n).keys()]
+```
+
+## Math
+### Round to nearest half
+```
+function roundToNearestHalf(value) {
+  return (Math.round(value * 2) / 2).toFixed(1);
+}
 ```
