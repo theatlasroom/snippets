@@ -1,4 +1,31 @@
 # JS
+## Concepts
+### Call / Apply / Bind
+```
+const param = { whoIsAwesome: 'YOU!' }
+
+function awesome(howAwesome){
+  console.log(`${this.whoIsAwesome} are ${howAwesome} awesome!`)
+}
+
+function maxAwesome(){
+  console.log(`${this.whoIsAwesome} are ultra awesome!`)  
+}
+```
+* `.call()` invokes the function and allows you to pass in arguments one by one.
+```
+awesome.call(param, 'pretty')
+```
+* `.apply()` invokes the function and allows you to pass in arguments as an array.
+```
+awesome.apply(param, ['super'])
+```
+* `.bind()` returns a new function, allowing you to pass in a this array and any number of arguments.
+  - Bind returns a new function. call and apply execute the current function immediately.
+```
+const ultraAwesome = maxAwesome.bind(param)
+ultraAwesome()
+```
 
 ## Environments
 ### Environment checks
@@ -34,4 +61,10 @@ function zeropad(str, minlength){
 }
 
 zeropad("10", 10);
+```
+
+## ES6 - Array of n items with values 0...n-1
+Use the spread array of
+```
+[...Array(n).keys()]
 ```
