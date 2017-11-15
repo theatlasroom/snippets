@@ -44,6 +44,16 @@ function isCli(){
 }
 ```
 
+## Strings
+### Capitalize
+
+```
+function capitalize(str){
+  if (!str.length) return ""
+  return str.charAt(0).toUpperCase().concat(str.slice(1).toLowerCase())
+}
+```
+
 ## Padding
 
 So it turns out filling an array with the character you would like to use for padding, [is fast](https://jsperf.com/string-padding-performance)
