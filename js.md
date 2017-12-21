@@ -95,3 +95,11 @@ function roundToNearestHalf(value) {
   return (Math.round(value * 2) / 2).toFixed(1);
 }
 ```
+
+## Dates
+### Generate month names (with moment)
+```
+[...Array(12).keys()].map(m => moment(m+1, "MM").format("MMM"))
+// returns ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+```
+
