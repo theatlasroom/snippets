@@ -54,6 +54,16 @@ function capitalize(str){
 }
 ```
 
+### Object to url params
+```
+const params = { filter: false, id: 100, cool: 'beans' }
+
+Object.entries(params)
+  .map(([key, value]) => `${key}=${value}`)
+  .reduce((acc, current) => [...acc, current], [])
+  .join('&')
+```
+
 ## Padding
 
 So it turns out filling an array with the character you would like to use for padding, [is fast](https://jsperf.com/string-padding-performance)
