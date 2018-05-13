@@ -59,8 +59,7 @@ function capitalize(str){
 const params = { filter: false, id: 100, cool: 'beans' }
 
 Object.entries(params)
-  .map(([key, value]) => `${key}=${value}`)
-  .reduce((acc, current) => [...acc, current], [])
+  .reduce((acc, [key, value]) => [...acc, `${key}=${value}`], [])
   .join('&')
 ```
 
