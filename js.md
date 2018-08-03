@@ -112,3 +112,29 @@ function roundToNearestHalf(value) {
 // returns ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 ```
 
+## Async / Await / Promises / Callbacks
+### Async IIFE
+```
+(async function(){
+  await somethingCool()
+})()
+```
+### Wait for parallel async functions
+```
+// executes each iteration in parallel
+const arr = [ ... ]
+async someFunction = () => { ... }
+
+await Promise.all(arr.map(someFunction))
+```
+
+### Wait for sequential async functions
+```
+// executes each iteration in series
+const arr = [ ... ]
+async someFunction = () => { ... }
+
+for (item of arr){
+  await someFunction(item)
+}
+```
