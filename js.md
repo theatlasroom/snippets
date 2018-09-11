@@ -97,6 +97,24 @@ Use the spread array operator
 [...Array(n).keys()]
 ```
 
+### Change position of an element (without splice)
+```
+const list = ['A', 'B', 'C', 'D', 'E', 'F']
+const target = 4
+const newPosition = 2
+function moveItem(list, target, newPosition){
+  const without = list.filter((_, index) => index != target)
+  return [
+    ...without.slice(0, newPosition),
+    list[target],  
+    ...without.slice(newPosition, without.length)
+  ]
+}
+
+console.log(moveItem(list, target, newPosition))
+// outputs: ['A', 'B', 'E', 'C', 'D', 'F'] 
+```
+
 ## Math
 ### Round to nearest half
 ```
