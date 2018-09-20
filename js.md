@@ -63,6 +63,23 @@ Object.entries(params)
   .join('&')
 ```
 
+### Boolean key:value to array of keys
+```
+const siqObj = {
+  someKey: true,
+  someFalseKey: false,
+  anotherKeyForGoodMeasure: true,
+}
+
+const toKeyArray = obj => 
+  Object.entries(obj)
+    .map(([key, value]) => !!value ? key : null)
+    .filter(i => !!i)
+    
+console.log(toKeyArray(siqObj))   
+// outputs ['someKey', 'anotherKeyForGoodMeasure']
+```
+
 ## Padding
 
 So it turns out filling an array with the character you would like to use for padding, [is fast](https://jsperf.com/string-padding-performance)
