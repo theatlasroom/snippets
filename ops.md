@@ -10,3 +10,8 @@ Create a network
 ```
 docker network create <network-name>
 ```
+
+Clean all docker stuffffff 🔥🔥🔥
+```
+docker system prune
+```
