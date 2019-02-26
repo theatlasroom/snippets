@@ -20,3 +20,10 @@ Run rspec with a the specified tag
 rspec my_super_cool_test_spec.rb --tag focus
 ```
 
+## Get value of selected checkbox or radio
+```
+find_field(selector, checked: true).value
+```
+
+## Links
+* [Ruby capybara with selenium cheat sheet](https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html)
