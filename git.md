@@ -17,3 +17,22 @@ git stash show -p
 # where n is the commit you want to target from the stash list
 git stash show stash@{n} -p 
 ```
+
+## Patches
+### Apply patch file from clipboard
+```
+pbpaste | git apply
+```
+
+### Apply patch file
+```
+git apply some_cool.patch
+```
+### Copy diff to clipboard
+```
+git diff | pbcopy
+```
+### Copy diff to a file
+```
+git diff > some_cool.patch
+```
